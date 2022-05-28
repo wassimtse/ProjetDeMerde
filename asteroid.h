@@ -9,13 +9,13 @@
 class Asteroid
 {
 public:
-    Asteroid(float x ,float y,float z, float speed);
+    Asteroid();
     ~Asteroid();
 
     void Display();
-private:
-    GLuint* m_TextureID_=nullptr;   // Tableau de textures
-    QImage space;                   // Texture de l'espace
+
+private :
+       int position[20][3];
 };
 
 #endif // ASTEROID_H

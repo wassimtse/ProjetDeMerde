@@ -3,5 +3,6 @@
         <file>spaceImg.jpg</file>
         <file>asteroid.jpg</file>
         <file>background.jpg</file>
+        <file>asteroide.jpg</file>
     </qresource>
 </RCC>

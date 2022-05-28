@@ -1,5 +1,6 @@
 #include "Ship.h"
 #include <iostream>
+#include <math.h>
 
 
 
@@ -17,11 +18,11 @@ void Ship::Display()
 
     if  (!this->Stop )
     {
-        z = z + 1.f ;
+        z = z + 0.5f ;
     }
 
 
-   std::cout<<"x: "<<x<<"y: " <<y<<"z:"<<z<<"    "<<Stop<<std::endl;
+ //  std::cout<<"x: "<<x<<"y: " <<y<<"z:"<<z<<"    "<<Stop<<std::endl;
 
 
     GLfloat colorAmbiante0_tab[]= {0.5, 0.1, 0.1, 1.0};
@@ -201,4 +202,5 @@ void Ship::Display()
 
 
             gluDeleteQuadric(quadrique); */
+
 }

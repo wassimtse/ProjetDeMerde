@@ -43,6 +43,9 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QOpenGLWidget(parent)
 void MyGLWidget::initializeGL() {
     space_ = new Space();
     ship_ = new Ship();
+    asteroid_ = new Asteroid();
+
+
 
     glEnable(GL_DEPTH_TEST);
 
@@ -113,7 +116,10 @@ void MyGLWidget::paintGL()
      glDisable(GL_LIGHTING);
     glPushMatrix();
     space_->Display();
+
+    asteroid_->Display();
     ship_->Display();
+
     glPopMatrix();
 
 
@@ -128,7 +134,7 @@ void MyGLWidget::keyPressEvent(QKeyEvent* keyEvent)
 {
     switch (keyEvent->key())
     {
-        case Qt::Key_Left:
+        case Qt::Key_Right:
         /*if (ship_->x>=-1400)
         {
             ship_->x-=2;
@@ -137,7 +143,7 @@ void MyGLWidget::keyPressEvent(QKeyEvent* keyEvent)
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
             this->update();
         break;
-        case Qt::Key_Right:
+        case Qt::Key_Left:
         /*if (ship_->x<=1400)
         {
             ship_->x+=2;

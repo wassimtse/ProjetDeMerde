@@ -28,6 +28,7 @@ protected:
 private:
     Space* space_ = nullptr;
     Ship* ship_ = nullptr;
+    Asteroid* asteroid_ = nullptr;
     float m_TimeElapsed { 0.0f };
     QTimer m_AnimationTimer;
 };
