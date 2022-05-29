@@ -18,7 +18,7 @@ Asteroid::Asteroid()
     //gluSphere(quadrique, 5.,20,20); // On dessine une sphère
     for (int i=1; i<20; i++)
     {
-        std::cout<<"Im here"<<std::endl;
+      //  std::cout<<"Im here"<<std::endl;
         int j=0;
         while (j<i)
         {
@@ -35,7 +35,7 @@ Asteroid::Asteroid()
                 distance= sqrt((position[i][0]-position[j][0])*(position[i][0]-position[j][0])
                         +(position[i][1]-position[j][1])*(position[i][1]-position[j][1])
                         +(position[i][2]-position[j][2])*(position[i][2]-position[j][2]));
-                std::cout<<"distance= "<<distance<<std::endl;
+              //  std::cout<<"distance= "<<distance<<std::endl;
             }
             j++;
 

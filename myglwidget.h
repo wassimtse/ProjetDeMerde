@@ -1,5 +1,7 @@
 #include "Ship.h"
 #include "Space.h"
+#include "asteroid.h"
+#include "station.h"
 #include <QOpenGLWidget>
 #include <QKeyEvent>
 
@@ -21,7 +23,7 @@ protected:
 
     // Fonction d'affichage
     void paintGL();
-
+    void IsOverwin();
     // Fonction de gestion d'interactions clavier
     void keyPressEvent(QKeyEvent* event);
 
@@ -29,6 +31,7 @@ private:
     Space* space_ = nullptr;
     Ship* ship_ = nullptr;
     Asteroid* asteroid_ = nullptr;
+    Station* station_ = nullptr;
     float m_TimeElapsed { 0.0f };
     QTimer m_AnimationTimer;
 };

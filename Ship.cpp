@@ -18,7 +18,7 @@ void Ship::Display()
 
     if  (!this->Stop )
     {
-        z = z + 0.5f ;
+        z = z + 5.f ;
     }
 
 

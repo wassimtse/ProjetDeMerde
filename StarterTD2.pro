@@ -20,11 +20,13 @@ else {
 SOURCES += main.cpp myglwidget.cpp \
     Ship.cpp \
     Space.cpp \
-    asteroid.cpp
+    asteroid.cpp \
+    station.cpp
 HEADERS += myglwidget.h \
     Ship.h \
     Space.h \
-    asteroid.h
+    asteroid.h \
+    station.h
 
 # nom de l'exe genere
 TARGET 	  = StarterTD2

@@ -13,9 +13,7 @@ public:
     ~Asteroid();
 
     void Display();
-
-private :
-       int position[20][3];
+    int position[20][3];
 };
 
 #endif // ASTEROID_H

@@ -7,6 +7,7 @@
 #include <glm/vec3.hpp>
 #include <glm/mat4x4.hpp>
 #include <gtx/normalize_dot.hpp>
+#include <iostream>
 
 
 #include <math.h>
@@ -36,6 +37,30 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QOpenGLWidget(parent)
 
 }
 
+void MyGLWidget::IsOverwin(){
+      //std::cout<<"dx"<< abs(ship_->x - station_->x) <<std::endl;
+     //  std::cout<<"dy"<< abs(ship_->y - station_->y) <<std::endl;
+    if ( ( abs(ship_->x - station_->x) < 20 ) && ( abs(ship_->y - station_->y) <20 ) && ( abs(ship_->z - station_->z) <2) ){
+        std::cout<<"C'est gagne"<<std::endl;
+        ship_->Stop = !(ship_->Stop);
+        this->update();
+
+    }
+    else
+    {
+        for (int i=0; i<=20; i++)
+        {
+            if ( ( abs(asteroid_->position[i][0] - ship_->x) < 20 ) &&
+                 ( abs(asteroid_->position[i][1] - ship_->y) <20 ) &&
+                 ( abs(asteroid_->position[i][2] - ship_->z) <2) )
+            {
+                std::cout<<"C'est perdu"<<std::endl;
+                ship_->Stop = !(ship_->Stop);
+                this->update();
+            }
+        }
+    }
+}
 
 // Fonction d'initialisation
 
@@ -43,6 +68,7 @@ MyGLWidget::MyGLWidget(QWidget * parent) : QOpenGLWidget(parent)
 void MyGLWidget::initializeGL() {
     space_ = new Space();
     ship_ = new Ship();
+    station_ = new Station();
     asteroid_ = new Asteroid();
 
 
@@ -118,11 +144,12 @@ void MyGLWidget::paintGL()
     space_->Display();
 
     asteroid_->Display();
+    station_->Display();
     ship_->Display();
 
     glPopMatrix();
 
-
+    IsOverwin();
 
     // Affichage de la route
     // Affichage de la voiture
